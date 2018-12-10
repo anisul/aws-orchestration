@@ -1,0 +1,5 @@
+amazonProperties:
+    endpointUrl: https://s3.eu-west-3.amazonaws.com
+    accessKey: XXXXXXXXX
+    secretKey: XXXXXXXXX
+    bucketName: anisun-1

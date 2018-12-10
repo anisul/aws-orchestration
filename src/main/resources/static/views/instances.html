@@ -1,0 +1,43 @@
+<div class="col-md-12">
+    <div ng-show="appAlert">
+        <div ng-show="appAlert.type == 'success'" class="alert alert-success">
+            {{appAlert.message}}
+        </div>
+        <div ng-show="appAlert.type == 'error'" class="alert alert-danger">
+            {{appAlert.message}}
+        </div>
+    </div>
+    <h1>Instances</h1>
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Public IP</th>
+            <th>Private IP</th>
+            <th>Subnet ID</th>
+            <th>Image ID</th>
+            <th>Instance Type</th>
+            <th>State</th>
+            <th></th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="instance in instances">
+            <td>{{instance.instanceId}}</td>
+            <td>{{instance.publicIp}}</td>
+            <td>{{instance.privateIp}}</td>
+            <td>{{instance.imageId}}</td>
+            <td>{{instance.instanceType}}</td>
+            <td>{{instance.state}}</td>
+            <td><div class="btn-group">
+                <button type="button" class="btn btn-primary btn-xs" ng-disabled="instance.state == 'running'" ng-click="startInstance(instance.instanceId)">Start</button>
+                <button type="button" class="btn btn-primary btn-xs" ng-disabled="instance.state == 'stopped'" ng-click="stopInstance(instance.instanceId)">Stop</button>
+                <button type="button" class="btn btn-primary btn-xs" ng-click="rebootInstance(instance.instanceId)">Reboot</button>
+            </div>
+            </td>
+            <td><a href="#!/cloud-watch/{{instance.instanceId}}"><small><span class="glyphicon glyphicon-equalizer"></span></small></a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>

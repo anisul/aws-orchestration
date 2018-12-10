@@ -1,0 +1,22 @@
+<div class="col-md-offset-3 col-md-4">
+    <div ng-show="appAlert">
+        <div ng-show="appAlert.type == 'success'" class="alert alert-success">
+            {{appAlert.message}}
+        </div>
+        <div ng-show="appAlert.type == 'error'" class="alert alert-danger">
+            {{appAlert.message}}
+        </div>
+    </div>
+    <h1>Create new bucket</h1>
+    <form>
+        <div class="form-group">
+            <input type="text" class="form-control" id="name" placeholder="Bucket Name" ng-model="bucketName">
+        </div>
+        <div class="form-group">
+            <label for="region">Select Region:</label>
+            <select class="form-control" id="region" ng-model="bucketRegion" ng-options="x for x in regions">
+            </select>
+        </div>
+        <button type="submit" class="btn btn-default" ng-click="submit()">Create</button>
+    </form>
+</div>

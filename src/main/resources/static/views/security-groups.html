@@ -1,0 +1,21 @@
+<div class="col-md-12">
+    <h1>Security Groups</h1>
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Owner ID</th>
+            <th>Group ID</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="securityGroup in securityGroups">
+            <td>{{securityGroup.groupName}}</td>
+            <td>{{securityGroup.description}}</td>
+            <td>{{securityGroup.ownerId}}</td>
+            <td>{{securityGroup.groupId}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>

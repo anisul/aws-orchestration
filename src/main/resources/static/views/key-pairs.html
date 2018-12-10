@@ -1,0 +1,17 @@
+<div class="col-md-offset-2 col-md-7">
+    <h1>Key Pairs</h1>
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Finger Print</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="key in keys">
+            <td>{{key.keyName}}</td>
+            <td>{{key.keyFingerprint}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>

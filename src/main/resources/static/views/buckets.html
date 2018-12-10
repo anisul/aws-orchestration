@@ -1,0 +1,17 @@
+<div class="col-md-offset-2 col-md-7">
+    <h1>Buckets</h1>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Date Created</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="bucket in buckets">
+                <td>{{bucket.name}}</td>
+                <td>{{bucket.creationDate | date:"medium"}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

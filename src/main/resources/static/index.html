@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>pAWS</title>
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="/css/app.css">
+        <script src="/webjars/angularjs/1.6.9/angular.js"></script>
+        <script src="/webjars/angularjs/1.6.9/angular-resource.js"></script>
+        <script src="/webjars/angularjs/1.6.9/angular-route.js"></script>
+        <script src="/webjars/jquery/2.2.4/jquery.min.js"></script>
+        <script type="text/javascript" src="https://code.highcharts.com/highcharts.js"></script>
+
+        <script src="/js/app.js"></script>
+        <script src="/js/directives.js"></script>
+        <script src="/js/controller.js"></script>
+        <link rel="stylesheet" href="/webjars/bootstrap/3.3.6/css/bootstrap.css">
+        <script src="/webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    </head>
+
+    <body ng-app="myApp" ng-controller="mainController">
+        <nav class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">pAWS</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a>(Current Region: {{currentRegion}})</a></li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Select Region <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li ng-repeat="region in regions"><a href="#!" ng-click="selectRegion(region)">{{region}}</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </nav>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2">
+                    <h3>S3</h3>
+                    <ul class="nav nav-pills nav-stacked">
+                        <li><a href="#!/create-bucket">Create Bucket</a></li>
+                        <li><a href="#!/buckets">Buckets</a></li>
+                        <li><a href="#!/upload-object">Upload Object</a></li>
+                        <li><a href="#!/download-object">Download Object</a></li>
+                        <li><a href="#!/delete-object">Delete Object</a></li>
+                    </ul>
+                    <h3>EC2</h3>
+                    <ul class="nav nav-pills nav-stacked">
+                        <li><a href="#!/key-pairs">Key Pairs</a></li>
+                        <li><a href="#!/security-groups">Security Groups</a></li>
+                        <li><a href="#!/instances">Instances</a></li>
+                        <li><a href="#!/create-key-pair">Create Key Pairs</a></li>
+                        <li><a href="#!/create-security-group">Create Security Group</a></li>
+                        <li><a href="#!/create-instance">Create Instance</a></li>
+                        <br>
+                        <br>
+                        <li><a href="#!/cloud-watch">CloudWatch</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-10">
+                    <div ng-view></div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
