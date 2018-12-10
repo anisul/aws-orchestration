@@ -6,3 +6,10 @@ Client can create/terminate/reboot EC2 instances from web interface.
 Also  key-pairs can be generated. New security groups can be created with custom control.
 
 Client can create S3 bucket from web interface. Also files can be downloaded, uploaded to S3 bucket.
+
+## demo
+
+![alt text](https://raw.githubusercontent.com/anisul/aws-orchestration/master/demo/instances.png)
+![alt text](https://raw.githubusercontent.com/anisul/aws-orchestration/master/demo/bucket.png)
+![alt text](https://raw.githubusercontent.com/anisul/aws-orchestration/master/demo/reate-instance.png)
+![alt text](https://raw.githubusercontent.com/anisul/aws-orchestration/master/demo/cloud-watch.png)
